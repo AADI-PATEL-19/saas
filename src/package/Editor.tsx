@@ -173,9 +173,9 @@ export default function Editor(): JSX.Element {
         <KeywordsPlugin />
         <SpeechToTextPlugin />
         <AutoLinkPlugin />
-        <CommentPlugin
+        {/* <CommentPlugin
           providerFactory={isCollab ? createWebsocketProvider : undefined}
-        />
+        /> */}
         {isRichText ? (
           <>
             {isCollab ? (
@@ -268,7 +268,7 @@ export default function Editor(): JSX.Element {
           shouldPreserveNewLinesInMarkdown={shouldPreserveNewLinesInMarkdown}
         />
       </div>
-      {showTreeView && <TreeViewPlugin />}
+    
     </>
   );
 }
