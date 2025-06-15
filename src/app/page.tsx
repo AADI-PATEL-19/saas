@@ -2,8 +2,6 @@
 import "../package/index.css";
 import dynamic from 'next/dynamic';
 
-// import './styles.css';
-
 const PlaygroundApp = dynamic(() => import('../package/App'), {
   ssr: false, // This disables server-side rendering for the component
 });

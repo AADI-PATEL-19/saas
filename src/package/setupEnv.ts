@@ -6,13 +6,14 @@
  *
  */
 
-import {INITIAL_SETTINGS, Settings} from './appSettings';
+import { INITIAL_SETTINGS, Settings } from './appSettings';
 
-// Export a function so this is not tree-shaken,
-// but evaluate it immediately so it executes before
-// lexical computes CAN_USE_BEFORE_INPUT
 export default (() => {
-  // override default options with query parameters if any
+  if (typeof window === 'undefined') {
+    // Prevent execution during SSR
+    return INITIAL_SETTINGS;
+  }
+
   const urlSearchParams = new URLSearchParams(window.location.search);
 
   for (const param of Object.keys(INITIAL_SETTINGS)) {

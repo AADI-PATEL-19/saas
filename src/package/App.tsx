@@ -45,18 +45,16 @@ console.warn(
 
 function $prepopulatedRichText() {
   const root = $getRoot();
-  if (root.getFirstChild() === null) {
 
-    const quote = $createQuoteNode();
-    quote.append(
-      $createTextNode(
-        `Write your description here... ` 
-      ),
+  if (root.getFirstChild() === null) {
+    const paragraph = $createParagraphNode();
+    paragraph.append(
+      $createTextNode('Write your description here...')
     );
-    root.append(quote);
-   
+    root.append(paragraph); // ✅ Now it's a "Normal" block
   }
 }
+
 
 function getExtraStyles(element: HTMLElement): string {
   // Parse styles from pasted input, but only if they match exactly the

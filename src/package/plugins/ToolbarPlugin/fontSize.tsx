@@ -106,7 +106,7 @@ export default function FontSize({
         <i className="format minus-icon" />
       </button>
 
-      <input
+      {/* <input
         type="number"
         title="Font size"
         value={inputValue}
@@ -117,7 +117,28 @@ export default function FontSize({
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyPress}
         onBlur={handleInputBlur}
-      />
+      /> */}
+ 
+<div
+  style={{
+   
+    width: '40px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '16px',
+    lineHeight: 'normal',
+    fontFamily: 'system-ui, sans-serif', // match input look
+    borderRadius: '4px',
+    boxSizing: 'border-box',
+ // subtle nudge to fix baseline shift
+    color: 'black',
+  }}
+>
+  {inputValue}
+</div>
+
+
 
       <button
         type="button"
