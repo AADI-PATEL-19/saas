@@ -53,13 +53,10 @@
 /* right-preview--------------------- */
 
 .right-preview {
-  width: 50%;
-  background: #1a1a1a;
-  
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: blue ;
+    width: 60%;
+    min-height: 100vh;
+    display: block;
 }
 
 .preview-card {
