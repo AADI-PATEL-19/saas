@@ -46,6 +46,16 @@ export default bundleAnalyzer({
         port: "",
         pathname: "/**",
       },
+            {
+        protocol: "https",
+        hostname: "youtu.be",
+        port: "",
+        pathname: "/**",
+      },
+
+
+
+      
     ],
   },
   poweredByHeader: false,

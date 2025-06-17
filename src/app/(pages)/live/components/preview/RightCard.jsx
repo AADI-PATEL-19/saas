@@ -8,7 +8,8 @@ import './LivePreview.css';
 const RightCard = () => {
     const [email, setEmail] = useState(''); const [phone, setPhone] = useState('');
 
-    return (<div className="card">
+    return (
+    <div className="card">
         <p className="access-label">Access to this purchase will be sent to this email</p>
         <input type="email" className="input-field" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} />
         <PhoneInputWithVerify />

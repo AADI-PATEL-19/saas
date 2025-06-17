@@ -1,4 +1,3 @@
-
 /* left panel ------------------- */
 .live-container {
   display: flex;
@@ -7,7 +6,7 @@
 }
 
 .left-panel {
-  width: 50%;
+  width: 40%;
   padding: 30px;
   border-right: 1px solid #ddd;
   background: #f9f9f9;
@@ -52,36 +51,6 @@
 
 /* right-preview--------------------- */
 
-.right-preview {
-  background-color: blue ;
-    width: 60%;
-    min-height: 100vh;
-    display: block;
-}
-
-.preview-card {
-  background: #FFFFFF;
-  padding: 30px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-}
-
-.preview-card h3 {
-  margin-top: 0;
-}
-
-.preview-btn {
-  margin-top: 20px;
-  background: #007bff;
-  border: none;
-  padding: 10px 15px;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 100%;
-}
 
 
 /* /--image upload----?---/ */
