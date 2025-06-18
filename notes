@@ -1,0 +1,14 @@
+removed things from toolbar insert tab dropdown
+from package/plugins/toobarplugin/index.tsx
+
+Horizontal Rule
+page break
+gif
+Excalidraw
+Poll
+x(tweet)
+Columns Layout
+Equation
+Sticky Note
+also removed figma by commenting on line noe 155 and 
+also commented on AutoEmbedPlugin file line no 119-155

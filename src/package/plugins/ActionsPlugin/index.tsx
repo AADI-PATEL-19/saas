@@ -196,7 +196,7 @@ export default function ActionsPlugin({
 
   return (
     <div className="actions">
-      {/* {SUPPORT_SPEECH_RECOGNITION && (
+      {SUPPORT_SPEECH_RECOGNITION && (
         <button
           onClick={() => {
             editor.dispatchCommand(SPEECH_TO_TEXT_COMMAND, !isSpeechToText);
@@ -296,7 +296,7 @@ export default function ActionsPlugin({
           } a collaborative editing server`}>
           <i className={connected ? 'disconnect' : 'connect'} />
         </button>
-      )} */}
+      )}
       {modal}
     </div>
   );
