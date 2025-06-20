@@ -201,11 +201,11 @@ export default function Editor(): JSX.Element {
             <CodeHighlightPlugin />
             <ListPlugin />
             <CheckListPlugin />
-            {/* <TablePlugin
+            <TablePlugin
               hasCellMerge={tableCellMerge}
               hasCellBackgroundColor={tableCellBackgroundColor}
               hasHorizontalScroll={tableHorizontalScroll}
-            /> */}
+            />
             <TableCellResizer />
             <ImagesPlugin />
             <InlineImagePlugin />

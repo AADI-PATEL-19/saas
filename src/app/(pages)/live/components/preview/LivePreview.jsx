@@ -5,7 +5,11 @@ import RightCard from './RightCard'
 import 'react-phone-number-input/style.css';
 
 const LivePreview = ({ formData }) => {
-    
+    // const formData = {
+    //     title: "this is just demo data to show something ",
+    //     description: "this is just a demo descrtiption,                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit libero soluta praesentium at dignissimos! Sit dolore numquam doloribus eius, nemo quasi assumenda debitis, sint sunt veniam beatae voluptatum facere dolorem, quod perferendis aut! Error id possimus perferendis culpa odit, saepe nemo ipsa unde dolorem veritatis. ",
+    //     imgSrc: "https://picsum.photos/300/400"
+    // }
     console.log(formData)
     return (
         <div className='LP-container'>
@@ -33,6 +37,17 @@ const LivePreview = ({ formData }) => {
                 </div>
 
                 <div className='web-right'>
+                    {/* <div className='card border '>
+                        <div> access to this purchase will be sent to this email</div>
+                        <div className='flex flex-col'>
+                            <label htmlFor="email">email:</label>
+                            <input id="email" type="email" className='myinput' />
+                        </div>
+                        <div className='flex flex-col'>
+                            <label htmlFor="email">mobile:</label>
+                            <input id="mobile" type="text" className='myinput' />
+                        </div>
+                    </div> */}
                     <RightCard />
                 </div>
             </div>
