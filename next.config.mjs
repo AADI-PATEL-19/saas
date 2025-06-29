@@ -52,8 +52,20 @@ export default bundleAnalyzer({
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "youtube.com",
+        port: "",
+        pathname: "/**",
+      },
 
-
+ {
+        protocol: "https",
+        hostname: "placehold.co",
+        port: "",
+        pathname: "/**",
+      }
+      
 
       
     ],

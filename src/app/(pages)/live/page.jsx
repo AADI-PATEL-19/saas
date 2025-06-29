@@ -1,6 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import './live.css';
+import { EditorOutputProvider } from '../../../package/context/EditorOutputContext';
+
 
 import PageDetailsForm from './components/tabs/PageDetailsForm';
 import PaymentDetailsForm from './components/tabs/PaymentDetailsForm';
@@ -9,7 +11,7 @@ import LivePreview from './components/preview/LivePreview';
 
 export default function LivePage() {
   const [activeTab, setActiveTab] = useState('pageDetails');
- const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
   title: '',
   description: '',
   cta: '',
@@ -18,7 +20,9 @@ export default function LivePage() {
   heroImage: '',
   heroFileName: '',
   heroFileSize: '',
+  heroType: '', // 'image' or 'video'
 });
+
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -28,6 +32,8 @@ export default function LivePage() {
   };
 
   return (
+        <EditorOutputProvider>
+
     <div className="live-container">
       <div className="left-panel">
         <div className="tabs">
@@ -51,8 +57,11 @@ export default function LivePage() {
       </div>
 
       <div className="right-preview">
+        
         <LivePreview formData={formData} />
       </div>
     </div>
+    </EditorOutputProvider>
+
   );
 }

@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'; // Make sure this is included
-
+import './PhoneInputWithVerify.css'
 export default function PhoneInputWithVerify() {
   const [phone, setPhone] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);

@@ -1,0 +1,66 @@
+.card {
+      
+  min-width: 200px;
+      margin: 0 auto;
+      padding: 15px;
+      background: #fff;
+      border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+      font-size: 14px;
+  border: none;
+  color: #111;
+    }
+    
+    .access-label {
+      font-size: 11px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    
+    .input-field {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 11px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .price-section {
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.subtotal {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+
+.total {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.terms-text {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.terms-text a {
+  color: #000;
+  text-decoration: underline;
+}
+
+

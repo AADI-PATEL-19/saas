@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import PhoneInputWithVerify from './PhoneInputWithVerify'
 import 'react-phone-input-2/lib/style.css';
-import './LivePreview.css';
+// import './LivePreview.css';
+import './RightCard.css'
 
 const RightCard = () => {
     const [email, setEmail] = useState(''); const [phone, setPhone] = useState('');

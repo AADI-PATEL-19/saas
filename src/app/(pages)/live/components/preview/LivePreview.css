@@ -1,107 +1,276 @@
+/* chatgpt generated code start for live preview-------------------------------------------------- */
+/* LivePreview.css */
 
-/* .container{
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-} */
+/* LivePreview.css */
 
-/* .part-one{
-    background-color: white ;
-    width: 40%;
-    min-height: 100vh;
+.lp-wrapper {
+  background-color: #f4f5f7;
+  min-height: 100vh;
+  padding: 4rem 5rem;
+  font-family: 'Inter', sans-serif;
 
-} */
+}
+
+.preview-header {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #7a7a7a;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.web-container {
+  width: 92%;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem;
+  position: relative;
+  gap: 2.5rem;
+  flex-wrap: nowrap;
+  height: 28rem;
+  overflow-y: auto;
+  /* allows vertical scrolling */
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  /* thumb color track color */
+
+
+}
+
+.web-container::-webkit-scrollbar-button {
+  display: none;
+}
+
+
+.preview-url {
+
+  text-align: center;
+  background: #ffffff;
+  padding: 0.4rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  color: #4b5563;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 0.7rem;
+}
+
+.preview-left {
+  flex: 1 1 66%;
+  max-width: 740px;
+}
+
+.preview-right {
+  flex: 1 1 30%;
+  max-width: 360px;
+}
+
+/* -----hero image start---- */
+
+
+.hero-section {
+
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+
+}
+
+.hero-image {
+  aspect-ratio: 16 / 9;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+
+
+
+
+/* -----hero image end---- */
+
+.preview-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+.preview-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.preview-description {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #374151;
+  padding-bottom: 1rem;
+}
+
+.preview-description img,
+.preview-description video,
+.preview-description iframe {
+  max-width: 100%;
+  height: auto;
+  margin: 1.25rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .web-container {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .preview-left,
+  .preview-right {
+    max-width: 100%;
+  }
+
+  .preview-right {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .preview-title {
+    font-size: 1.3rem;
+  }
+
+  .preview-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .preview-description {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* chatgpt generated code end for live preview-------------------------------------------------- */
+
+
 
 
 
 .right-preview {
-  background-color: yellow ;
+  background-color: yellow;
   width: 60%;
 }
 
 
-.right-preview .LP-container{
-    background-color: #000;
-    min-height: 100vh;  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+
+
+
+
+.description-wrapper {
+  max-width: 100%;
+
+  overflow: hidden;
+}
+
+.description {
   width: 100%;
-
-    min-height: 100vh;
-  
-    display: flex;
-    justify-content: center;
-    align-content: center;
-
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
-.web-cont{
-    background-color: white;
-    min-height: 80vh;
-    width: 80%;
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    padding: 1rem;
+/* Make images inside lexical HTML responsive */
+
+.description img {
+  max-width: 100%;
+  height: auto;
+  /* display: block; */
+  object-fit: contain;
 }
 
-.web-left{
-    width: 60%;
+/* Make iframes (e.g., YouTube embeds) responsive */
+.description iframe {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  /* display: block; */
 }
-.web-right{
-  width: 40%  ;
-  padding: 10px;
 
+/* Optional: Force videos to fit too */
+.description video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
+
 .image-container {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   position: relative;
 }
+
 .hero-image {
-  width: 100%;
+  width: 90%;
   height: 100%;
-  object-fit: cover; /* or use 'contain' if you want full image with padding */
-}
-.title{
-    font-size: 1.6rem;
-    font-weight: 800;
+  object-fit: cover;
+  /* or use 'contain' if you want full image with padding */
 }
 
-.desc-title{
-    font-size: 1.2rem;
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.desc-title {
+  font-size: 1.2rem;
 }
 
 
 
 .url-container {
-    position: absolute;
-    top: -2.6rem;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  top: -2.6rem;
+  left: 50%;
+  transform: translateX(-50%);
 
-    width: 80%;
-    padding: 3px 10px;
+  width: 80%;
+  padding: 3px 10px;
 
-    display: flex;
-    justify-content: center;
-    
-    background-color: #f5f5f5; /* optional */
-    border-radius: 6px;        /* optional */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* optional */
+  display: flex;
+  justify-content: center;
+
+  background-color: #f5f5f5;
+  /* optional */
+  border-radius: 6px;
+  /* optional */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* optional */
 }
 
 
 
 .url-text {
-    background-color: #f5f5f5; /* Optional styling */
-    padding: 5px 10px;
-    border-radius: 5px;
+  background-color: #f5f5f5;
+  /* Optional styling */
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 
@@ -111,287 +280,18 @@
 
 
 
-.card {
-    width: 16rem;
-    margin: 0 auto;
-    padding: 16px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    font-family: 'Segoe UI', sans-serif;
-    border: 1px solid black;
-    font-size: 1rem;
-  }
-  
-  .access-label {
-    font-size: 11px;
-    margin-bottom: 8px;
-    color: #333;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 11px;
-    outline: none;
-    box-sizing: border-box;
-  }
-
-  .react-tel-input .arrow {
-    display: none !important;
-  }
-
-
-  .flag-dropdown::after {
-    content: '▼'; /* default down arrow */
-    font-size: 10px;
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #333;
-    transition: transform 0.2s;
-  }
-
-  .flag-dropdown.open::after {
-    content: '▲'; /* up arrow */
-  }
-
-  /* Force the dropdown to open below the input */
-.react-tel-input .country-list {
-  top: 100% !important;
-  left: 0 !important; /* Align dropdown with the left of the flag dropdown */
-  right: auto !important;
-  margin-top: 4px !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 9999 !important;
-  background-color: #fff;
-  width: max-content;
-  min-width: 240px; /* Optional: enforce a consistent width */
-}
-
-  
-  .phone-input-wrapper {
-    position: relative;
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  .phone-container {
-    width: 100% !important;
-  }
-  
-  .phone-field-custom {
-    width: 100% !important;
-    padding: 12px 80px 12px 50px !important; /* space for flag + verify button */
-    border: 1px solid #ccc !important;
-    border-radius: 8px !important;
-    font-size: 14px !important;
-    height: 44px !important;
-    box-sizing: border-box !important;
-  }
-  
-  .react-tel-input .flag-dropdown {
-    background: #fff !important;
-    border: 1px solid #ccc !important;
-    border-right: none !important;
-    height: 44px !important;
-    width: 48px !important;
-    border-radius: 8px 0 0 8px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-sizing: border-box !important;
-    padding: 0 !important;
-  }
-  .react-tel-input .selected-flag {
-    padding-left: 8px !important;
-  }
-
-  
-  .react-tel-input .arrow {
-    margin-left: 4px !important;
-    border-top: 5px solid #666 !important;
-    border-left: 4px solid transparent !important;
-    border-right: 4px solid transparent !important;
-  }
-
-
-  
-  .verify-button-inside {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    padding: 6px 12px;
-    background-color: #f9fafb;
-    color: #333;
-    font-size: 13px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    cursor: pointer;
-    height: 30px;
-    transition: background-color 0.2s, border-color 0.2s;
-  }
-  
-  .verify-button-inside:hover {
-    background-color: #e5e7eb;
-    border-color: #aaa;
-  }
-  
-  
- 
-  
-
-  
-
-  
-  .price-section {
-    margin-top: 16px;
-    margin-bottom: 12px;
-  }
-  
-  .subtotal {
-    font-size: 13px;
-    color: #555;
-    margin-bottom: 4px;
-  }
-  
-  .strike {
-    text-decoration: line-through;
-    color: #999;
-    margin-right: 8px;
-  }
-  
-  .total {
-    font-size: 15px;
-    font-weight: bold;
-    color: #000;
-  }
-  
-  .terms-text {
-    font-size: 11px;
-    color: #666;
-    line-height: 1.5;
-  }
-  
-  .terms-text a {
-    color: #000;
-    text-decoration: underline;
-  }
 
 
 
 
-  .react-tel-input .arrow {
-      display: none !important;
-    }
-  
-  
-    .flag-dropdown::after {
-      content: '▼'; /* default down arrow */
-      font-size: 10px;
-      position: absolute;
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-      pointer-events: none;
-      color: #333;
-      transition: transform 0.2s;
-    }
-  
-    .flag-dropdown.open::after {
-      content: '▲'; /* up arrow */
-    }
-  
-    /* Force the dropdown to open below the input */
-  .react-tel-input .country-list {
-    top: 100% !important;
-    left: 0 !important; /* Align dropdown with the left of the flag dropdown */
-    right: auto !important;
-    margin-top: 4px !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 9999 !important;
-    background-color: #fff;
-    width: max-content;
-    min-width: 240px; /* Optional: enforce a consistent width */
-  }
-  
-    
-    .phone-input-wrapper {
-      position: relative;
-      width: 100%;
-      margin-bottom: 16px;
-    }
-    
-    .phone-container {
-      width: 100% !important;
-    }
-    
-    .phone-field-custom {
-      width: 100% !important;
-      padding: 12px 80px 12px 50px !important; /* space for flag + verify button */
-      border: 1px solid #ccc !important;
-      border-radius: 8px !important;
-      font-size: 14px !important;
-      height: 44px !important;
-      box-sizing: border-box !important;
-    }
-    
-    .react-tel-input .flag-dropdown {
-      background: #fff !important;
-      border: 1px solid #ccc !important;
-      border-right: none !important;
-      height: 44px !important;
-      width: 48px !important;
-      border-radius: 8px 0 0 8px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-sizing: border-box !important;
-      padding: 0 !important;
-    }
-    .react-tel-input .selected-flag {
-      padding-left: 8px !important;
-    }
-  
-    
-    .react-tel-input .arrow {
-      margin-left: 4px !important;
-      border-top: 5px solid #666 !important;
-      border-left: 4px solid transparent !important;
-      border-right: 4px solid transparent !important;
-    }
-  
-  
-    
-    .verify-button-inside {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      padding: 6px 12px;
-      background-color: #f9fafb;
-      color: #333;
-      font-size: 13px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      cursor: pointer;
-      height: 30px;
-      transition: background-color 0.2s, border-color 0.2s;
-    }
-    
-    .verify-button-inside:hover {
-      background-color: #e5e7eb;
-      border-color: #aaa;
-    }
-    
+
+
+
+
+
+
+
+
 
 
 
@@ -401,13 +301,11 @@
 
 
 @media only screen and (max-width: 600px) {
-    div {
-      flex-direction: column;
-    }
-    .part-two{
-        display: hidden;
-    }
+  div {
+    flex-direction: column;
   }
-  
-  
-  
+
+  .part-two {
+    display: hidden;
+  }
+}

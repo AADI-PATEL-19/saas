@@ -1805,3 +1805,19 @@ button.item.dropdown-item-active i {
 
 
 
+
+
+
+.preview-wrapper {
+  border: 1px dashed #ddd;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: #fdfdfd;
+}
+
+.preview-output {
+  all: unset;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #333;
+}

@@ -12,3 +12,13 @@ Equation
 Sticky Note
 also removed figma by commenting on line noe 155 and 
 also commented on AutoEmbedPlugin file line no 119-155
+under insert tab removed inline image
+
+
+rte bottom tools removed form (package/plugins/ActionsPlugin)--commented- Editor.tsx--284
+
+
+rte content generate chatgpt prompt-----------------------
+
+i have integrated richtext editor in my code, now i want to check weather a good copy paste can be happenend inside it, so for that you have to give me  a verity of rich text editor content, so i can copy paste it to see wherther it keeps the format not ok, bro just give me all at once so i can copy paste it directly, why are you giving it one by one
+

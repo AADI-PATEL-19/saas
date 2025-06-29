@@ -12,12 +12,12 @@ const PlaygroundApp = dynamic(() => import('../../../../../package/App'), {
 
 import '../../../../../package/index.css';
 
-export default function PaymentDetailsForm({ formData, onChange, setFormData }) {
+export default function PageDetailsForm({ formData, onChange, setFormData }) {
   const [showFAQ, setShowFAQ] = useState(false);
   const [showTestimonial, setShowTestimonial] = useState(false);
   const [faqs, setFaqs] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
-  const [openMenuIndex, setOpenMenuIndex] = useState({ type: null, index: null });
+  const [ openMenuIndex, setOpenMenuIndex] = useState({ type: null, index: null });
   const [editingTestimonial, setEditingTestimonial] = useState(null);
   const [editingFAQ, setEditingFAQ] = useState(null);
 
@@ -139,6 +139,7 @@ export default function PaymentDetailsForm({ formData, onChange, setFormData }) 
         style={{ width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
       />
 
+     {/* ----------------------------------- buttons section starts from here------------------------- */}
       {/* Optional Sections Toggle */}
       <div style={styles.sectionContainer}>
         <h3 style={styles.sectionHeading}>Optional Sections</h3>

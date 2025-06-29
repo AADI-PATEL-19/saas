@@ -7,6 +7,8 @@
  */
 
 import type {JSX} from 'react';
+import { $generateHtmlFromNodes } from '@lexical/html';
+import { useEditorOutput } from './context/EditorOutputContext';
 
 import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
 import {CharacterLimitPlugin} from '@lexical/react/LexicalCharacterLimitPlugin';
@@ -113,6 +115,20 @@ export default function Editor(): JSX.Element {
   const [isSmallWidthViewport, setIsSmallWidthViewport] =
     useState<boolean>(false);
   const [editor] = useLexicalComposerContext();
+
+  const { setHtml } = useEditorOutput();
+
+useEffect(() => {
+  return editor.registerUpdateListener(({ editorState }) => {
+    editorState.read(() => {
+      const htmlString = $generateHtmlFromNodes(editor, null);
+            console.log('Generated HTML:', htmlString); // ✅ DEBUG LINE
+
+      setHtml(htmlString);
+    });
+  });
+}, [editor, setHtml]);
+
   const [activeEditor, setActiveEditor] = useState(editor);
   const [isLinkEditMode, setIsLinkEditMode] = useState<boolean>(false);
 
@@ -138,6 +154,8 @@ export default function Editor(): JSX.Element {
       window.removeEventListener('resize', updateViewPortWidth);
     };
   }, [isSmallWidthViewport]);
+
+console.log("✅ Editor mounted!");
 
   return (
     <>
@@ -263,10 +281,10 @@ export default function Editor(): JSX.Element {
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         {shouldAllowHighlightingWithBrackets && <SpecialTextPlugin />}
-        <ActionsPlugin
+        {/* <ActionsPlugin
           isRichText={isRichText}
           shouldPreserveNewLinesInMarkdown={shouldPreserveNewLinesInMarkdown}
-        />
+        /> */}
       </div>
     
     </>

@@ -150,7 +150,7 @@ export const TwitterEmbedConfig: PlaygroundEmbedConfig = {
 // };
 
 export const EmbedConfigs = [
-  TwitterEmbedConfig,
+  // TwitterEmbedConfig,
   YoutubeEmbedConfig,
   // FigmaEmbedConfig,
 ];

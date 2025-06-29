@@ -1,19 +1,23 @@
 'use client';
 import React, { useRef, useState } from 'react';
-
+import './HeroImageUpload.css'
 export default function HeroImageUpload({ formData, setFormData }) {
   const fileInputRef = useRef();
   const [isDragging, setIsDragging] = useState(false);
 
-  const handleFileUpload = (file) => {
-    const imageUrl = URL.createObjectURL(file);
-    setFormData((prev) => ({
-      ...prev,
-      heroImage: imageUrl,
-      heroFileName: file.name,
-      heroFileSize: (file.size / 1024).toFixed(2),
-    }));
-  };
+ const handleFileUpload = (file) => {
+  const fileUrl = URL.createObjectURL(file);
+  const fileType = file.type.startsWith('video') ? 'video' : 'image';
+
+  setFormData((prev) => ({
+    ...prev,
+    heroImage: fileUrl,
+    heroFileName: file.name,
+    heroFileSize: (file.size / 1024).toFixed(2),
+    heroType: fileType,
+  }));
+};
+
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -38,14 +42,29 @@ export default function HeroImageUpload({ formData, setFormData }) {
     setIsDragging(false);
   };
 
-  const handleUrlChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      heroImage: e.target.value,
-      heroFileName: '',
-      heroFileSize: '',
-    }));
-  };
+  const isVideoUrl = (url) => {
+  const videoExtensions = ['.mp4', '.webm', '.ogg'];
+  const isDirectVideo = videoExtensions.some(ext => url.toLowerCase().endsWith(ext));
+  const isYouTube = url.includes('youtube.com') || url.includes('youtu.be');
+  const isVimeo = url.includes('vimeo.com');
+  const isDailymotion = url.includes('dai.ly') || url.includes('dailymotion.com');
+
+  return isDirectVideo || isYouTube || isVimeo || isDailymotion;
+};
+
+const handleUrlChange = (e) => {
+  const url = e.target.value;
+  const type = isVideoUrl(url) ? 'video' : 'image';
+
+  setFormData((prev) => ({
+    ...prev,
+    heroImage: url,
+    heroFileName: '',
+    heroFileSize: '',
+    heroType: type,
+  }));
+};
+
 
   const handleRemove = () => {
     setFormData((prev) => ({

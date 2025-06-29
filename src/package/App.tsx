@@ -20,6 +20,7 @@ import {
   DOMConversionMap,
   TextNode,
 } from 'lexical';
+import { EditorOutputProvider } from './context/EditorOutputContext';
 
 import {isDevPlayground} from './appSettings';
 import {FlashMessageContext} from './context/FlashMessageContext';
@@ -160,9 +161,8 @@ export default function PlaygroundApp(): JSX.Element {
   return (
     <SettingsContext>
       <FlashMessageContext>
-        <App />
+          <App />
       </FlashMessageContext>
-     
     </SettingsContext>
   );
 }
