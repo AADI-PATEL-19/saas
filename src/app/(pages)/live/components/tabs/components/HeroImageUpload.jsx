@@ -1,23 +1,24 @@
 'use client';
 import React, { useRef, useState } from 'react';
-import './HeroImageUpload.css'
+import './HeroImageUpload.css';
+import {isValidVideoUrl} from '../../../../../../lib/commanFun'
+
 export default function HeroImageUpload({ formData, setFormData }) {
   const fileInputRef = useRef();
   const [isDragging, setIsDragging] = useState(false);
+  const [videoInput, setVideoInput] = useState('');
 
- const handleFileUpload = (file) => {
-  const fileUrl = URL.createObjectURL(file);
-  const fileType = file.type.startsWith('video') ? 'video' : 'image';
+  const handleFileUpload = (file) => {
+    const fileUrl = URL.createObjectURL(file);
 
-  setFormData((prev) => ({
-    ...prev,
-    heroImage: fileUrl,
-    heroFileName: file.name,
-    heroFileSize: (file.size / 1024).toFixed(2),
-    heroType: fileType,
-  }));
-};
-
+    setFormData((prev) => ({
+      ...prev,
+      imageFile: fileUrl,
+      videoUrl: '', // Clear any existing video URL
+      heroFileName: file.name,
+      heroFileSize: (file.size / 1024).toFixed(2),
+    }));
+  };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -42,44 +43,43 @@ export default function HeroImageUpload({ formData, setFormData }) {
     setIsDragging(false);
   };
 
-  const isVideoUrl = (url) => {
-  const videoExtensions = ['.mp4', '.webm', '.ogg'];
-  const isDirectVideo = videoExtensions.some(ext => url.toLowerCase().endsWith(ext));
-  const isYouTube = url.includes('youtube.com') || url.includes('youtu.be');
-  const isVimeo = url.includes('vimeo.com');
-  const isDailymotion = url.includes('dai.ly') || url.includes('dailymotion.com');
-
-  return isDirectVideo || isYouTube || isVimeo || isDailymotion;
-};
-
-const handleUrlChange = (e) => {
-  const url = e.target.value;
-  const type = isVideoUrl(url) ? 'video' : 'image';
-
-  setFormData((prev) => ({
-    ...prev,
-    heroImage: url,
-    heroFileName: '',
-    heroFileSize: '',
-    heroType: type,
-  }));
-};
 
 
-  const handleRemove = () => {
+
+
+  const handleSetVideoUrl = () => {
+    if (!isValidVideoUrl(videoInput)) {
+      alert('Please enter a valid video URL.');
+      return;
+    }
+
     setFormData((prev) => ({
       ...prev,
-      heroImage: '',
+      videoUrl: videoInput,
+      imageFile: '', // Clear image if video is being set
       heroFileName: '',
       heroFileSize: '',
     }));
   };
 
+  const handleRemove = () => {
+    setFormData((prev) => ({
+      ...prev,
+      imageFile: '',
+      videoUrl: '',
+      heroFileName: '',
+      heroFileSize: '',
+    }));
+    setVideoInput('');
+  };
+
+  const hasMedia = formData.imageFile || formData.videoUrl;
+
   return (
     <div className="hero-upload-box">
       <label className="required-label">Cover Image/Video *</label>
 
-      {formData.heroImage ? (
+      {hasMedia ? (
         <div className="file-preview-box">
           <div className="file-preview-icon">🖼️</div>
           <div className="file-details">
@@ -115,14 +115,18 @@ const handleUrlChange = (e) => {
 
           <div className="or-divider">OR</div>
 
-          <div className="video-url-input">
-            <input
-              type="text"
-              placeholder="Enter video URL"
-              value={formData.heroImage || ''}
-              onChange={handleUrlChange}
-            />
-          </div>
+         <div className="video-url-input">
+  <input
+    type="text"
+    placeholder="Enter video URL"
+    value={videoInput}
+    onChange={(e) => setVideoInput(e.target.value)}
+  />
+  <button onClick={handleSetVideoUrl} className="video-url-submit-btn">
+    Add
+  </button>
+</div>
+
         </>
       )}
     </div>

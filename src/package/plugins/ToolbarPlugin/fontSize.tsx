@@ -90,7 +90,7 @@ export default function FontSize({
 
   return (
     <>
-      <button
+      <button 
         type="button"
         disabled={
           disabled ||

@@ -4,6 +4,10 @@
   height: 100vh;
   font-family: Arial, sans-serif;
 }
+.right-preview {
+  background-color: yellow;
+  width: 60%;
+}
 
 .left-panel {
   width: 40%;
@@ -11,7 +15,9 @@
   border-right: 1px solid #ddd;
   background: #f9f9f9;
   overflow-y: auto;
+  box-sizing: border-box; /* optional but good practice */
 }
+
 
 /* left tabs--------------- */
 .tabs {
@@ -41,15 +47,20 @@
   font-weight: bold;
 }
 
+.form-section {
+  padding: 10px; /* optional padding inside the section */
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .form-section input {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
-
-
 
 
 

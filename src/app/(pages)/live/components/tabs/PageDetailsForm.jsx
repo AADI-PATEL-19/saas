@@ -112,6 +112,9 @@ export default function PageDetailsForm({ formData, onChange, setFormData }) {
 
   return (
     <>
+    <div className=''>
+
+   
       <label htmlFor="title" style={styles.label}>Payment Page Title</label>
       <input
         id="title"
@@ -542,8 +545,10 @@ export default function PageDetailsForm({ formData, onChange, setFormData }) {
           onEditFAQ={handleEditFAQ}
           faqToEdit={editingFAQ}
         />
+        
       )}
-
+ </div>
     </>
+    
   );
 }

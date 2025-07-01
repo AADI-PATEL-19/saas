@@ -9,12 +9,12 @@
 @import 'https://fonts.googleapis.com/css?family=Reenie+Beanie';
 
 body {
-  margin: 0;
+  /* margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0 20px;
+  padding: 0 20px; */
 }
 
 header {
@@ -45,13 +45,24 @@ header h1 {
 }
 
 .editor-shell {
-  margin: 20px auto;
-  border-radius: 2px;
+  /* from body tag started */
+
+    margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* from body tag ended */
+  margin: 16px auto;
+  border-radius: 7px;
   max-width: 1100px;
   color: #000;
   position: relative;
   line-height: 1.7;
   font-weight: 400;
+    border: 1px solid #ccc;
+
+  /* background-color: green; */
 }
 
 .editor-shell .editor-container {
@@ -1501,8 +1512,24 @@ button.action-button:disabled {
   position: sticky;
   top: 0;
   z-index: 2;
-  overflow-y: hidden; /* disable vertical scroll*/
+  overflow-y: hidden; 
 }
+/* 
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;               
+  align-items: flex-start;       
+  margin-bottom: 1px;
+  background: #fff;
+  padding: 4px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: auto;                  
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  overflow: hidden;              
+} */
 
 button.toolbar-item {
   border: 0;
@@ -1515,6 +1542,7 @@ button.toolbar-item {
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 button.toolbar-item:disabled {

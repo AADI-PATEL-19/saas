@@ -9,15 +9,18 @@
 .font-size-input {
   font-weight: bold;
   font-size: 14px;
-  color: #777;
+  color: #333;
+  background-color: #fff;
   border-radius: 5px;
-  border-color: grey;
-  height: 15px;
+  border: 1px solid grey;
+  height: 24px;
   padding: 2px 4px;
   text-align: center;
-  width: 20px;
+  width: 30px;
+  box-sizing: border-box;
   align-self: center;
 }
+
 
 .font-size-input:disabled {
   opacity: 0.2;

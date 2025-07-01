@@ -37,11 +37,40 @@
   color: #aaa;
 }
 
+.video-url-input {
+  position: relative;
+  width: 100%;
+}
+
 .video-url-input input {
   width: 100%;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 10px 70px 10px 15px; /* Extra right padding for button */
+  border-radius: 30px;
   border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 1;
+}
+
+.video-url-submit-btn {
+  position: absolute;
+  top: 55%;
+  right: 10px;
+  transform: translateY(-50%);
+  height: 30px;
+  padding: 0 14px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .preview-hero img,
@@ -125,13 +154,7 @@
   color: #999;
 }
 
-.video-url-input input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
+
 
 
 

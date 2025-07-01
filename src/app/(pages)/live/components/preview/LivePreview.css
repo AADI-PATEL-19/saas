@@ -3,12 +3,13 @@
 
 /* LivePreview.css */
 
+
+
 .lp-wrapper {
-  background-color: #f4f5f7;
+  background: linear-gradient(to bottom, #111827, #1f2937, #374151);
   min-height: 100vh;
   padding: 4rem 5rem;
   font-family: 'Inter', sans-serif;
-
 }
 
 .preview-header {
@@ -40,7 +41,7 @@
   scrollbar-color: #888 #f1f1f1;
   /* thumb color track color */
 
-
+background-color: white;
 }
 
 .web-container::-webkit-scrollbar-button {
@@ -100,7 +101,7 @@
 /* -----hero image end---- */
 
 .preview-title {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #111827;
   margin: 0 0 0.75rem;
@@ -108,11 +109,12 @@
 }
 
 .preview-subtitle {
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #6b7280; /* Lighter gray */
   margin-bottom: 0.5rem;
 }
+
 
 .preview-description {
   font-size: 0.95rem;
@@ -124,6 +126,8 @@
 .preview-description img,
 .preview-description video,
 .preview-description iframe {
+    aspect-ratio: 16 / 9;
+
   max-width: 100%;
   height: auto;
   margin: 1.25rem 0;
@@ -169,10 +173,6 @@
 
 
 
-.right-preview {
-  background-color: yellow;
-  width: 60%;
-}
 
 
 
@@ -227,11 +227,79 @@
 }
 
 .hero-image {
-  width: 90%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
+    border-radius: 12px;
+
   /* or use 'contain' if you want full image with padding */
 }
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover; /* Optional: use 'contain' if you prefer */
+  border-radius: 12px;
+}
+/* ------------------------------video loading skeleton start----------------------------- */
+.skeleton-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  border-radius: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  animation: shimmer 1.5s infinite linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.1) 50%,
+    transparent
+  );
+}
+
+.skeleton-box::after {
+  content: "▶";
+  position: absolute;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+/* ------------------------------video loading skeleton start----------------------------- */
+
 
 .title {
   font-size: 1.6rem;
@@ -276,28 +344,18 @@
 
 
 
-/* right card css----------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* right link css----------------- */
+.copy-link {
+  min-width: 230px;
+  width: 100%;
+  padding: 9px 0px;
+  font-size: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(65, 65, 65, 0.2); /* Lighter border */
+  text-align: center;
+  background-color: white;
+  margin-top: 10px;
+}
 
 
 @media only screen and (max-width: 600px) {
